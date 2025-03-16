@@ -1,0 +1,132 @@
+<div class="bg-gradient-to-t from-teal-light to-white py-12 md:py-16">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
+        {{ section.settings.heading | default: 'Complete Orthopedic Solutions' }}
+      </h2>
+      
+      {% if section.settings.subheading != blank %}
+        <p class="mt-3 max-w-2xl mx-auto text-gray-500">
+          {{ section.settings.subheading | default: 'Professional-grade products designed for support, recovery, and everyday comfort' }}
+        </p>
+      {% endif %}
+    </div>
+    
+    <div class="flex justify-center">
+      <div class="relative max-w-4xl w-full rounded-xl overflow-hidden shadow-xl">
+        {% if section.settings.image %}
+          <img 
+            src="{{ section.settings.image | img_url: 'master' }}" 
+            alt="{{ section.settings.heading | escape }}"
+            class="w-full h-auto"
+          >
+        {% else %}
+          <img 
+            src="{{ 'orthopedic-products-display.png' | asset_url }}" 
+            alt="Orthopedic Product Lineup"
+            class="w-full h-auto"
+          >
+        {% endif %}
+        
+        {% if section.settings.show_overlay %}
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+            <div class="p-6 md:p-8 w-full">
+              <h3 class="text-xl md:text-2xl font-bold text-white mb-2">
+                {{ section.settings.overlay_heading | default: 'Wellness Products' }}
+              </h3>
+              
+              {% if section.settings.overlay_text != blank %}
+                <p class="text-white/90 max-w-xl">
+                  {{ section.settings.overlay_text }}
+                </p>
+              {% endif %}
+              
+              {% if section.settings.button_text != blank %}
+                <a href="{{ section.settings.button_url | default: '/collections/all' }}" class="mt-4 inline-block bg-teal hover:bg-teal-dark text-white px-6 py-2 rounded-md transition-colors">
+                  {{ section.settings.button_text }}
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    
+    {% if section.settings.show_tags %}
+      <div class="flex flex-wrap justify-center gap-2 mt-8">
+        <span class="px-3 py-1 bg-teal-light text-teal rounded-full text-sm">Knee Braces</span>
+        <span class="px-3 py-1 bg-teal-light text-teal rounded-full text-sm">Back Support</span>
+        <span class="px-3 py-1 bg-teal-light text-teal rounded-full text-sm">Ankle Support</span>
+        <span class="px-3 py-1 bg-teal-light text-teal rounded-full text-sm">Mobility Aids</span>
+        <span class="px-3 py-1 bg-teal-light text-teal rounded-full text-sm">Recovery Tools</span>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Showcase",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Showcase Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Complete Orthopedic Solutions"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Professional-grade products designed for support, recovery, and everyday comfort"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay",
+      "label": "Show image overlay",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "overlay_heading",
+      "label": "Overlay heading",
+      "default": "Wellness Products"
+    },
+    {
+      "type": "textarea",
+      "id": "overlay_text",
+      "label": "Overlay text",
+      "default": "Discover our complete range of therapeutic supports and orthopedic solutions"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "View All Products"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL",
+      "default": "/collections/all"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tags",
+      "label": "Show product category tags",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Showcase",
+      "category": "Products"
+    }
+  ]
+}
+{% endschema %}

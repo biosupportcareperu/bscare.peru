@@ -1,0 +1,112 @@
+<div class="bg-gradient-to-b from-teal-light to-white">
+  <div class="container mx-auto px-4 py-10 md:py-16">
+    <div class="flex flex-col md:flex-row items-center">
+      <!-- Text Content -->
+      <div class="w-full md:w-1/2 md:pr-12 mb-8 md:mb-0">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">
+          {{ section.settings.heading | default: 'Orthopedic and Support Products' }}
+        </h1>
+        
+        <div class="text-lg text-gray-600 mb-6">
+          {{ section.settings.subheading | default: 'Professional-grade support for pain relief, rehabilitation, and everyday comfort.' }}
+        </div>
+        
+        <div class="flex flex-wrap gap-3">
+          {% if section.settings.button_text != blank %}
+            <a href="{{ section.settings.button_url | default: '/collections/all' }}" class="btn-primary">
+              {{ section.settings.button_text }}
+            </a>
+          {% endif %}
+          
+          {% if section.settings.secondary_button_text != blank %}
+            <a href="{{ section.settings.secondary_button_url | default: '/pages/contact' }}" class="btn-secondary">
+              {{ section.settings.secondary_button_text }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+      
+      <!-- Hero Image -->
+      <div class="w-full md:w-1/2">
+        {% if section.settings.image %}
+          <img 
+            src="{{ section.settings.image | img_url: 'master' }}" 
+            alt="{{ section.settings.heading | escape }}"
+            class="w-full h-auto rounded-lg shadow-lg"
+          >
+        {% else %}
+          <img 
+            src="{{ 'orthopedic-products-hero.png' | asset_url }}" 
+            alt="Orthopedic and Support Products"
+            class="w-full h-auto rounded-lg shadow-lg"
+          >
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .btn-primary {
+    @apply bg-teal text-white py-3 px-6 rounded-md hover:bg-teal-dark transition-colors focus:outline-none focus:ring-2 focus:ring-teal focus:ring-offset-2 inline-block;
+  }
+  
+  .btn-secondary {
+    @apply border border-teal text-teal py-3 px-6 rounded-md hover:bg-teal-light transition-colors focus:outline-none focus:ring-2 focus:ring-teal focus:ring-offset-2 inline-block;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Orthopedic and Support Products"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Professional-grade support for pain relief, rehabilitation, and everyday comfort."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL",
+      "default": "/collections/all"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_text",
+      "label": "Secondary Button Text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_url",
+      "label": "Secondary Button URL",
+      "default": "/pages/about"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Section",
+      "category": "Hero"
+    }
+  ]
+}
+{% endschema %}

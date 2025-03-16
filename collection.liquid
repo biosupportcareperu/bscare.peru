@@ -1,0 +1,11 @@
+{% section 'collection-header' %}
+
+{% paginate collection.products by section.settings.products_per_page %}
+  {% section 'collection-products' %}
+  
+  {% if collection.description != blank and section.settings.show_description_below_header %}
+    <div class="py-10">
+      {% section 'collection-description' %}
+    </div>
+  {% endif %}
+{% endpaginate %}

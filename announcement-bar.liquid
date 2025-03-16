@@ -1,0 +1,50 @@
+<div class="top-nav py-2 text-sm">
+  <div class="container mx-auto px-4 flex justify-between items-center">
+    <div class="flex items-center space-x-4">
+      <span><i class="fa-solid fa-location-dot mr-1"></i> {{ shop.address.city }}, {{ shop.address.country }}</span>
+      <span><i class="fa-solid fa-phone mr-1"></i> {{ shop.phone }}</span>
+    </div>
+    <div class="flex items-center space-x-4">
+      <a href="#" class="text-white hover:text-gray-200">
+        <i class="fa-solid fa-user mr-1"></i> {{ 'customer.account.title' | t }}
+      </a>
+      <div class="language-selector" x-data="{ open: false }">
+        <button @click="open = !open" class="flex items-center text-white hover:text-gray-200">
+          <span class="mr-1">{{ shop.locale }}</span>
+          <i class="fa-solid fa-chevron-down text-xs"></i>
+        </button>
+        <div x-show="open" @click.away="open = false" class="absolute bg-white shadow-md mt-1 py-1 px-2 rounded text-gray-800 z-50">
+          {% for locale in shop.published_locales %}
+            <a href="{{ locale.root_url }}" class="block py-1 hover:text-teal">{{ locale.name }}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_social",
+      "label": "Show social icons",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_locale_selector",
+      "label": "Show language selector",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement Bar",
+      "category": "Header"
+    }
+  ]
+}
+{% endschema %}

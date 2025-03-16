@@ -1,0 +1,242 @@
+<div class="py-10">
+  <div class="container mx-auto px-4">
+    <h1 class="text-2xl md:text-3xl font-bold mb-8 text-center">{{ 'cart.general.title' | t }}</h1>
+    
+    {% if cart.item_count > 0 %}
+      <form action="/cart" method="post" novalidate class="cart">
+        <!-- Cart Items -->
+        <div class="overflow-x-auto mb-8">
+          <table class="w-full">
+            <thead class="border-b border-gray-200">
+              <tr>
+                <th class="py-3 px-4 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                  {{ 'cart.label.product' | t }}
+                </th>
+                <th class="py-3 px-4 text-left text-sm font-medium text-gray-500 uppercase tracking-wider hidden sm:table-cell">
+                  {{ 'cart.label.price' | t }}
+                </th>
+                <th class="py-3 px-4 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                  {{ 'cart.label.quantity' | t }}
+                </th>
+                <th class="py-3 px-4 text-right text-sm font-medium text-gray-500 uppercase tracking-wider">
+                  {{ 'cart.label.total' | t }}
+                </th>
+                <th class="py-3 px-4 text-right text-sm font-medium text-gray-500 uppercase tracking-wider w-10"></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              {% for item in cart.items %}
+                <tr class="hover:bg-gray-50">
+                  <!-- Product -->
+                  <td class="py-4 px-4">
+                    <div class="flex items-center">
+                      <a href="{{ item.url }}" class="flex-shrink-0 mr-4">
+                        <img 
+                          src="{{ item.image | img_url: '100x100', crop: 'center' }}" 
+                          alt="{{ item.title }}" 
+                          class="w-16 h-16 object-cover rounded"
+                        >
+                      </a>
+                      <div>
+                        <a href="{{ item.url }}" class="text-gray-800 font-medium hover:text-teal">
+                          {{ item.product.title }}
+                        </a>
+                        
+                        {% unless item.product.has_only_default_variant %}
+                          <p class="text-sm text-gray-500 mt-1">
+                            {% for option in item.product.options %}
+                              <span>{{ option }}: {{ item.variant.options[forloop.index0] }}</span>
+                              {%- unless forloop.last %}, {% endunless %}
+                            {% endfor %}
+                          </p>
+                        {% endunless %}
+                        
+                        {% if item.selling_plan_allocation %}
+                          <p class="text-sm text-gray-500 mt-1">
+                            {{ item.selling_plan_allocation.selling_plan.name }}
+                          </p>
+                        {% endif %}
+                        
+                        <div class="mt-1 sm:hidden">
+                          <span class="text-gray-500 text-sm">{{ item.final_price | money }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  
+                  <!-- Price -->
+                  <td class="py-4 px-4 hidden sm:table-cell">
+                    <span class="text-gray-700">{{ item.final_price | money }}</span>
+                    
+                    {% if item.original_price != item.final_price %}
+                      <div class="text-sm text-gray-400 line-through">{{ item.original_price | money }}</div>
+                    {% endif %}
+                  </td>
+                  
+                  <!-- Quantity -->
+                  <td class="py-4 px-4">
+                    <div class="flex items-center border border-gray-300 rounded-md w-24">
+                      <button 
+                        type="button" 
+                        class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-teal"
+                        onclick="updateQuantity('{{ item.key }}', {{ item.quantity | minus: 1 }})"
+                      >
+                        <i class="fa-solid fa-minus text-xs"></i>
+                      </button>
+                      
+                      <input 
+                        type="number" 
+                        name="updates[{{ item.key }}]" 
+                        id="updates_{{ item.key }}" 
+                        value="{{ item.quantity }}" 
+                        min="0" 
+                        aria-label="{{ 'cart.label.quantity' | t }}" 
+                        class="w-8 h-8 text-center text-gray-700 focus:outline-none"
+                      >
+                      
+                      <button 
+                        type="button" 
+                        class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-teal"
+                        onclick="updateQuantity('{{ item.key }}', {{ item.quantity | plus: 1 }})"
+                      >
+                        <i class="fa-solid fa-plus text-xs"></i>
+                      </button>
+                    </div>
+                  </td>
+                  
+                  <!-- Total -->
+                  <td class="py-4 px-4 text-right">
+                    <span class="text-gray-700 font-medium">{{ item.final_line_price | money }}</span>
+                  </td>
+                  
+                  <!-- Remove -->
+                  <td class="py-4 px-4 text-right">
+                    <button 
+                      type="button" 
+                      class="text-gray-400 hover:text-red-500" 
+                      onclick="updateQuantity('{{ item.key }}', 0)"
+                    >
+                      <i class="fa-solid fa-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Cart Footer -->
+        <div class="flex flex-col md:flex-row md:items-start md:justify-between">
+          <!-- Special Instructions -->
+          <div class="w-full md:w-1/2 mb-6 md:mb-0 md:pr-8">
+            <label for="note" class="block text-sm font-medium text-gray-700 mb-2">
+              {{ 'cart.general.note' | t }}
+            </label>
+            <textarea 
+              id="note" 
+              name="note" 
+              rows="4" 
+              class="w-full border border-gray-300 rounded-md py-2 px-3 resize-none focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent"
+            >{{ cart.note }}</textarea>
+            
+            <!-- Continue Shopping Button -->
+            <div class="mt-4">
+              <a href="/collections/all" class="text-teal hover:text-teal-dark">
+                <i class="fa-solid fa-arrow-left mr-2"></i>
+                {{ 'cart.general.continue_shopping' | t }}
+              </a>
+            </div>
+          </div>
+          
+          <!-- Cart Summary -->
+          <div class="w-full md:w-1/2 md:pl-8 md:border-l md:border-gray-200">
+            <!-- Subtotal -->
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-gray-700">{{ 'cart.general.subtotal' | t }}</span>
+              <span class="text-xl font-bold text-gray-900">{{ cart.total_price | money }}</span>
+            </div>
+            
+            <!-- Shipping Note -->
+            <p class="text-sm text-gray-500 mb-6">
+              {{ 'cart.general.shipping_at_checkout' | t }}
+            </p>
+            
+            <!-- Checkout Buttons -->
+            <div class="space-y-3">
+              <!-- Update Cart Button -->
+              <button 
+                type="submit" 
+                name="update" 
+                class="w-full border border-teal text-teal py-3 px-4 rounded-md hover:bg-teal-light transition-colors focus:outline-none focus:ring-2 focus:ring-teal focus:ring-offset-2"
+              >
+                {{ 'cart.general.update' | t }}
+              </button>
+              
+              <!-- Checkout Button -->
+              <button 
+                type="submit" 
+                name="checkout" 
+                class="w-full bg-teal text-white py-3 px-4 rounded-md hover:bg-teal-dark transition-colors focus:outline-none focus:ring-2 focus:ring-teal focus:ring-offset-2"
+              >
+                {{ 'cart.general.checkout' | t }}
+              </button>
+              
+              <!-- Additional Checkout Buttons -->
+              {% if additional_checkout_buttons %}
+                <div class="mt-2">
+                  {{ content_for_additional_checkout_buttons }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </form>
+    {% else %}
+      <!-- Empty Cart -->
+      <div class="text-center py-12">
+        <div class="mb-6">
+          <i class="fa-solid fa-shopping-cart text-6xl text-gray-300"></i>
+        </div>
+        <h2 class="text-2xl font-medium text-gray-900 mb-4">{{ 'cart.general.empty' | t }}</h2>
+        <p class="text-gray-500 mb-8">{{ 'cart.general.continue_browsing_html' | t }}</p>
+        <a href="/collections/all" class="btn-primary">
+          {{ 'cart.general.continue_shopping' | t }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<script>
+  function updateQuantity(key, quantity) {
+    const updates = {};
+    updates[key] = quantity;
+    
+    fetch('/cart/update.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ updates })
+    })
+    .then(response => response.json())
+    .then(data => {
+      window.location.reload();
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Cart Page",
+  "presets": [
+    {
+      "name": "Cart Page",
+      "category": "Cart"
+    }
+  ]
+}
+{% endschema %}

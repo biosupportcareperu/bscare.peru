@@ -1,0 +1,202 @@
+<footer class="bg-gray-100 pt-12 pb-6">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <!-- Company Info -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">{{ shop.name }}</h3>
+        <p class="text-gray-600 mb-4">{{ section.settings.company_description }}</p>
+        
+        <!-- Social Icons -->
+        <div class="flex space-x-4">
+          {% if section.settings.facebook_url != blank %}
+            <a href="{{ section.settings.facebook_url }}" class="text-gray-500 hover:text-teal" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          {% endif %}
+          
+          {% if section.settings.instagram_url != blank %}
+            <a href="{{ section.settings.instagram_url }}" class="text-gray-500 hover:text-teal" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          {% endif %}
+          
+          {% if section.settings.twitter_url != blank %}
+            <a href="{{ section.settings.twitter_url }}" class="text-gray-500 hover:text-teal" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+      
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">{{ section.settings.menu_heading }}</h3>
+        <ul class="space-y-2">
+          {% for link in linklists[section.settings.footer_menu].links %}
+            <li>
+              <a href="{{ link.url }}" class="text-gray-600 hover:text-teal">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">{{ section.settings.contact_heading }}</h3>
+        <ul class="space-y-2 text-gray-600">
+          {% if section.settings.address != blank %}
+            <li class="flex items-start">
+              <i class="fa-solid fa-location-dot mt-1 mr-2"></i>
+              <span>{{ section.settings.address }}</span>
+            </li>
+          {% endif %}
+          
+          {% if section.settings.phone != blank %}
+            <li class="flex items-start">
+              <i class="fa-solid fa-phone mt-1 mr-2"></i>
+              <a href="tel:{{ section.settings.phone }}" class="hover:text-teal">{{ section.settings.phone }}</a>
+            </li>
+          {% endif %}
+          
+          {% if section.settings.email != blank %}
+            <li class="flex items-start">
+              <i class="fa-solid fa-envelope mt-1 mr-2"></i>
+              <a href="mailto:{{ section.settings.email }}" class="hover:text-teal">{{ section.settings.email }}</a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+      
+      <!-- Newsletter Signup -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">{{ section.settings.newsletter_heading }}</h3>
+        <p class="text-gray-600 mb-4">{{ section.settings.newsletter_text }}</p>
+        
+        <form action="{{ routes.account_url }}" method="post" class="flex">
+          <input 
+            type="email" 
+            name="contact[email]" 
+            placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}" 
+            required 
+            class="flex-grow border border-gray-300 rounded-l-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent"
+            aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}"
+          >
+          <button 
+            type="submit" 
+            class="bg-teal text-white px-4 rounded-r-md hover:bg-teal-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal"
+          >
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="border-t border-gray-200 pt-6 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-500 text-sm mb-4 md:mb-0">
+        &copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. {{ section.settings.copyright_text }}
+      </p>
+      
+      {% if section.settings.show_payment_icons %}
+        <div class="flex space-x-2">
+          <img src="{{ 'visa.svg' | asset_url }}" alt="Visa" class="h-8">
+          <img src="{{ 'mastercard.svg' | asset_url }}" alt="Mastercard" class="h-8">
+          <img src="{{ 'american_express.svg' | asset_url }}" alt="American Express" class="h-8">
+          <img src="{{ 'paypal.svg' | asset_url }}" alt="PayPal" class="h-8">
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "company_description",
+      "label": "Company description",
+      "default": "BioSupport Care provides high-quality orthopedic products designed for comfort, support, and effective rehabilitation."
+    },
+    {
+      "type": "text",
+      "id": "menu_heading",
+      "label": "Menu heading",
+      "default": "Quick Links"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_menu",
+      "label": "Menu",
+      "default": "footer"
+    },
+    {
+      "type": "text",
+      "id": "contact_heading",
+      "label": "Contact heading",
+      "default": "Contact Us"
+    },
+    {
+      "type": "text",
+      "id": "address",
+      "label": "Address"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone number"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email address"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_heading",
+      "label": "Newsletter heading",
+      "default": "Subscribe to Our Newsletter"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_text",
+      "label": "Newsletter text",
+      "default": "Stay updated with our latest products and offers."
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright text",
+      "default": "All rights reserved."
+    },
+    {
+      "type": "url",
+      "id": "facebook_url",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "twitter_url",
+      "label": "Twitter URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "label": "Show payment icons",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer",
+      "category": "Footer"
+    }
+  ]
+}
+{% endschema %}

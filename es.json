@@ -1,0 +1,186 @@
+{
+  "general": {
+    "meta": {
+      "tags": "Etiquetado \"{{ tags }}\"",
+      "page": "Página {{ page }}"
+    },
+    "404": {
+      "title": "404 Página no encontrada",
+      "subtext": "La página que solicitó no existe.",
+      "link": "Continuar comprando"
+    },
+    "pagination": {
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "current_page": "Página {{ current }} de {{ total }}"
+    },
+    "search": {
+      "title": "Buscar",
+      "placeholder": "Buscar en nuestra tienda",
+      "submit": "Buscar",
+      "heading": "Resultados de búsqueda para \"{{ terms }}\"",
+      "results_with_count": {
+        "one": "{{ count }} resultado para \"{{ terms }}\"",
+        "other": "{{ count }} resultados para \"{{ terms }}\""
+      },
+      "no_results": "No se encontraron resultados para \"{{ terms }}\"",
+      "no_results_html": "Por favor intente con un término de búsqueda diferente o <a href=\"/\">vuelva a la página de inicio</a>."
+    },
+    "newsletter_form": {
+      "confirmation": "Gracias por suscribirse",
+      "submit": "Suscribirse",
+      "placeholder": "Tu correo electrónico"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Tu Carrito",
+      "note": "Añadir una nota a tu pedido",
+      "empty": "Tu carrito está vacío",
+      "continue_browsing_html": "<a href=\"/collections/all\">Continuar comprando</a>.",
+      "continue_shopping": "Continuar comprando",
+      "update": "Actualizar carrito",
+      "checkout": "Finalizar compra",
+      "subtotal": "Subtotal",
+      "shipping_at_checkout": "Envío y tasas calculados al finalizar la compra"
+    },
+    "label": {
+      "product": "Producto",
+      "price": "Precio",
+      "quantity": "Cantidad",
+      "total": "Total",
+      "remove": "Eliminar"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Añadir al carrito",
+      "added_to_cart": "Añadido al carrito",
+      "sold_out": "Agotado",
+      "unavailable": "No disponible",
+      "on_sale": "Oferta",
+      "from_text_html": "Desde {{ price }}",
+      "quantity": "Cantidad",
+      "view_in_space": "Ver en tu espacio",
+      "include_taxes": "Impuesto incluido.",
+      "shipping_policy_html": "Los <a href=\"{{ link }}\">gastos de envío</a> se calculan en la pantalla de pagos."
+    },
+    "orthopedic": {
+      "knee_brace": "Soporte de Rodilla Avanzado",
+      "ankle_support": "Soporte Estabilizador de Tobillo",
+      "back_support": "Cinturón de Soporte Lumbar Ergonómico",
+      "support": "Soporte",
+      "brace": "Ortesis",
+      "belt": "Cinturón",
+      "rehabilitation": "Rehabilitación",
+      "medical": "Médico",
+      "orthopedic": "Ortopédico",
+      "therapy": "Terapia",
+      "recovery": "Recuperación",
+      "sports": "Deportes"
+    }
+  },
+  "collections": {
+    "general": {
+      "no_matches": "No hay productos en esta colección",
+      "link_title": "Explora nuestra colección {{ title }}",
+      "view_all": "Ver todo",
+      "items_with_count": {
+        "one": "{{ count }} producto",
+        "other": "{{ count }} productos"
+      }
+    },
+    "sorting": {
+      "title": "Ordenar por",
+      "featured": "Destacados",
+      "best_selling": "Más vendidos",
+      "az": "Alfabéticamente, A-Z",
+      "za": "Alfabéticamente, Z-A",
+      "price_ascending": "Precio, menor a mayor",
+      "price_descending": "Precio, mayor a menor",
+      "date_descending": "Fecha, nuevo a antiguo",
+      "date_ascending": "Fecha, antiguo a nuevo"
+    },
+    "filters": {
+      "title_tags": "Filtrar",
+      "all_tags": "Todos los productos",
+      "reset": "Restablecer",
+      "apply": "Aplicar"
+    },
+    "orthopedic": {
+      "orthopedic_supports": "Soportes Ortopédicos",
+      "rehabilitation_products": "Productos de Rehabilitación",
+      "sports_recovery": "Recuperación Deportiva"
+    }
+  },
+  "contact": {
+    "form": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "phone": "Número de teléfono",
+      "message": "Mensaje",
+      "send": "Enviar",
+      "post_success": "Gracias por contactarnos. Nos pondremos en contacto contigo lo antes posible."
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "Mi cuenta",
+      "details": "Detalles de la cuenta",
+      "view_addresses": "Ver direcciones",
+      "return": "Volver a detalles de la cuenta"
+    },
+    "login": {
+      "title": "Iniciar sesión",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "forgot_password": "¿Olvidaste tu contraseña?",
+      "sign_in": "Iniciar sesión",
+      "new_customer": "¿Nuevo cliente?"
+    },
+    "register": {
+      "title": "Crear cuenta",
+      "first_name": "Nombre",
+      "last_name": "Apellido",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "submit": "Crear"
+    }
+  },
+  "homepage": {
+    "hero": {
+      "title": "Soportes y Productos Ortopédicos",
+      "subtitle": "Soporte profesional para alivio del dolor, rehabilitación y comodidad diaria.",
+      "button": "Comprar ahora",
+      "secondary_button": "Conocer más"
+    },
+    "features": {
+      "title": "¿Por qué elegir BioSupport Care?",
+      "subtitle": "Nuestros productos ortopédicos están diseñados por profesionales médicos para un soporte y comodidad superiores.",
+      "premium_quality": "Calidad Premium",
+      "premium_quality_text": "Nuestros productos están fabricados con materiales de la más alta calidad para una durabilidad y soporte duraderos.",
+      "doctor_recommended": "Recomendado por Médicos",
+      "doctor_recommended_text": "Diseñado en colaboración con especialistas ortopédicos para un máximo beneficio terapéutico.",
+      "fast_shipping": "Envío Rápido",
+      "fast_shipping_text": "Envío express gratuito en todos los pedidos superiores a $75, con entrega en 2-3 días hábiles."
+    },
+    "collections": {
+      "title": "Explora Nuestras Colecciones",
+      "orthopedic_supports": "Soportes Ortopédicos",
+      "rehabilitation_products": "Productos de Rehabilitación",
+      "sports_recovery": "Recuperación Deportiva"
+    },
+    "reviews": {
+      "title": "Opiniones de Clientes",
+      "subtitle": "Esto es lo que nuestros clientes dicen sobre nuestros productos",
+      "verified_buyer": "Comprador Verificado"
+    },
+    "newsletter": {
+      "title": "Mantente Actualizado",
+      "subtitle": "Suscríbete a nuestro boletín para recibir actualizaciones de productos, consejos de salud y ofertas exclusivas.",
+      "placeholder": "Tu dirección de correo electrónico",
+      "button": "Suscribirse",
+      "privacy_note": "Al suscribirte, aceptas nuestra Política de Privacidad y consientes recibir actualizaciones de nuestra empresa."
+    }
+  }
+}

@@ -1,0 +1,107 @@
+<div class="py-12 bg-gray-100">
+  <div class="container mx-auto px-4">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+        {{ section.settings.heading | default: 'Stay Updated' }}
+      </h2>
+      
+      <p class="text-gray-600 mb-6">
+        {{ section.settings.subheading | default: 'Subscribe to our newsletter for product updates, health tips, and exclusive offers.' }}
+      </p>
+      
+      {% form 'customer', id: 'newsletter-form', class: 'space-y-4' %}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        
+        <div class="flex flex-col sm:flex-row gap-3">
+          <div class="flex-grow">
+            <input 
+              type="email" 
+              name="contact[email]" 
+              id="Email" 
+              placeholder="{{ section.settings.placeholder | default: 'Your email address' }}"
+              required 
+              class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent"
+            >
+          </div>
+          
+          <button 
+            type="submit" 
+            class="btn-primary"
+          >
+            {{ section.settings.button_text | default: 'Subscribe' }}
+          </button>
+        </div>
+        
+        {% if form.posted_successfully? %}
+          <div class="text-green-600 mt-2">{{ 'general.newsletter_form.confirmation' | t }}</div>
+        {% endif %}
+        
+        {% if form.errors %}
+          <div class="text-red-600 mt-2">{{ form.errors.messages['email'] }}</div>
+        {% endif %}
+      {% endform %}
+      
+      {% if section.settings.show_privacy_note %}
+        <p class="text-xs text-gray-500 mt-4">
+          {{ section.settings.privacy_note | default: 'By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.' }}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .btn-primary {
+    @apply bg-teal text-white py-3 px-6 rounded-md hover:bg-teal-dark transition-colors focus:outline-none focus:ring-2 focus:ring-teal focus:ring-offset-2;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Stay Updated"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Subscribe to our newsletter for product updates, health tips, and exclusive offers."
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Input placeholder text",
+      "default": "Your email address"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Subscribe"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_privacy_note",
+      "label": "Show privacy note",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "privacy_note",
+      "label": "Privacy note",
+      "default": "By subscribing, you agree to our Privacy Policy and consent to receive updates from our company."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter",
+      "category": "Promotional"
+    }
+  ]
+}
+{% endschema %}

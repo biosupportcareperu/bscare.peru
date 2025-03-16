@@ -1,0 +1,108 @@
+<section class="py-12 bg-blue-light">
+  <div class="container mx-auto px-4">
+    <!-- Section Title -->
+    <h2 class="section-title text-center">{{ section.settings.title }}</h2>
+    {% if section.settings.subtitle != blank %}
+      <p class="section-subtitle text-center max-w-2xl mx-auto">
+        {{ section.settings.subtitle }}
+      </p>
+    {% endif %}
+    
+    <!-- Benefits Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+      {% for block in section.blocks %}
+        <div class="benefit-card bg-white rounded-lg shadow-md p-6 text-center" {{ block.shopify_attributes }}>
+          <!-- Icon -->
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-teal-light rounded-full mb-4">
+            <i class="{{ block.settings.icon }} text-teal text-2xl"></i>
+          </div>
+          
+          <!-- Title -->
+          <h3 class="text-xl font-semibold mb-3">{{ block.settings.title }}</h3>
+          
+          <!-- Description -->
+          <p class="text-gray-600">{{ block.settings.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Benefits Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Why Choose Our Products"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "We are committed to providing high-quality orthopedic solutions for your needs"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Benefit",
+      "type": "benefit",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon class",
+          "default": "fa-solid fa-check",
+          "info": "Use Font Awesome icon classes. For example: fa-solid fa-check"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Benefit title",
+          "default": "Quality Materials"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Benefit description",
+          "default": "Our products are made with high-quality materials for durability and comfort."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefits Section",
+      "category": "Content",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "fa-solid fa-check",
+            "title": "Quality Materials",
+            "description": "Our products are made with high-quality materials for durability and comfort."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "fa-solid fa-truck",
+            "title": "Fast Shipping",
+            "description": "We offer fast and reliable shipping to get your products to you quickly."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "fa-solid fa-headset",
+            "title": "Expert Support",
+            "description": "Our team of experts is always ready to help you with any questions."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

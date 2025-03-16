@@ -1,0 +1,326 @@
+<div class="bg-white py-12 md:py-16">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
+        {{ section.settings.heading | default: 'Wellness Products' }}
+      </h2>
+      
+      {% if section.settings.subheading != blank %}
+        <p class="mt-3 max-w-2xl mx-auto text-gray-500">
+          {{ section.settings.subheading }}
+        </p>
+      {% endif %}
+    </div>
+    
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+      <!-- Category 1 -->
+      <a href="{{ section.settings.category_1_url | default: '/collections/massage' }}" class="group">
+        <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden mb-3 flex items-center justify-center relative">
+          {% if section.settings.category_1_image %}
+            <img 
+              src="{{ section.settings.category_1_image | img_url: '250x250', crop: 'center' }}" 
+              alt="{{ section.settings.category_1_title | escape }}" 
+              class="w-full h-full object-cover"
+            >
+          {% else %}
+            <div class="w-20 h-20 bg-blue-400 rounded-full"></div>
+          {% endif %}
+          <div class="absolute bottom-0 right-0 w-8 h-8 bg-teal rounded-full m-2 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 transition-opacity">
+            <i class="fa-solid fa-plus text-xs"></i>
+          </div>
+        </div>
+        <h3 class="text-center text-sm font-medium text-gray-800">
+          {{ section.settings.category_1_title | default: 'Massage Aids' }}
+        </h3>
+      </a>
+      
+      <!-- Category 2 -->
+      <a href="{{ section.settings.category_2_url | default: '/collections/ankle-support' }}" class="group">
+        <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden mb-3 flex items-center justify-center relative">
+          {% if section.settings.category_2_image %}
+            <img 
+              src="{{ section.settings.category_2_image | img_url: '250x250', crop: 'center' }}" 
+              alt="{{ section.settings.category_2_title | escape }}" 
+              class="w-full h-full object-cover"
+            >
+          {% else %}
+            <img src="{{ 'ankle-support.png' | asset_url }}" alt="Ankle Support" class="w-full h-full object-cover">
+          {% endif %}
+          <div class="absolute bottom-0 right-0 w-8 h-8 bg-teal rounded-full m-2 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 transition-opacity">
+            <i class="fa-solid fa-plus text-xs"></i>
+          </div>
+        </div>
+        <h3 class="text-center text-sm font-medium text-gray-800">
+          {{ section.settings.category_2_title | default: 'Ankle Supports' }}
+        </h3>
+      </a>
+      
+      <!-- Category 3 -->
+      <a href="{{ section.settings.category_3_url | default: '/collections/foot-care' }}" class="group">
+        <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden mb-3 flex items-center justify-center relative">
+          {% if section.settings.category_3_image %}
+            <img 
+              src="{{ section.settings.category_3_image | img_url: '250x250', crop: 'center' }}" 
+              alt="{{ section.settings.category_3_title | escape }}" 
+              class="w-full h-full object-cover"
+            >
+          {% else %}
+            <div class="w-20 h-20 bg-gray-300 rounded-full"></div>
+          {% endif %}
+          <div class="absolute bottom-0 right-0 w-8 h-8 bg-teal rounded-full m-2 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 transition-opacity">
+            <i class="fa-solid fa-plus text-xs"></i>
+          </div>
+        </div>
+        <h3 class="text-center text-sm font-medium text-gray-800">
+          {{ section.settings.category_3_title | default: 'Foot Care' }}
+        </h3>
+      </a>
+      
+      <!-- Category 4 -->
+      <a href="{{ section.settings.category_4_url | default: '/collections/knee-braces' }}" class="group">
+        <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden mb-3 flex items-center justify-center relative">
+          {% if section.settings.category_4_image %}
+            <img 
+              src="{{ section.settings.category_4_image | img_url: '250x250', crop: 'center' }}" 
+              alt="{{ section.settings.category_4_title | escape }}" 
+              class="w-full h-full object-cover"
+            >
+          {% else %}
+            <img src="{{ 'knee-brace.png' | asset_url }}" alt="Knee Brace" class="w-full h-full object-cover">
+          {% endif %}
+          <div class="absolute bottom-0 right-0 w-8 h-8 bg-teal rounded-full m-2 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 transition-opacity">
+            <i class="fa-solid fa-plus text-xs"></i>
+          </div>
+        </div>
+        <h3 class="text-center text-sm font-medium text-gray-800">
+          {{ section.settings.category_4_title | default: 'Knee Braces' }}
+        </h3>
+      </a>
+      
+      <!-- Category 5 -->
+      <a href="{{ section.settings.category_5_url | default: '/collections/wrist-support' }}" class="group">
+        <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden mb-3 flex items-center justify-center relative">
+          {% if section.settings.category_5_image %}
+            <img 
+              src="{{ section.settings.category_5_image | img_url: '250x250', crop: 'center' }}" 
+              alt="{{ section.settings.category_5_title | escape }}" 
+              class="w-full h-full object-cover"
+            >
+          {% else %}
+            <div class="w-20 h-20 bg-teal-300 rounded-full"></div>
+          {% endif %}
+          <div class="absolute bottom-0 right-0 w-8 h-8 bg-teal rounded-full m-2 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 transition-opacity">
+            <i class="fa-solid fa-plus text-xs"></i>
+          </div>
+        </div>
+        <h3 class="text-center text-sm font-medium text-gray-800">
+          {{ section.settings.category_5_title | default: 'Wrist Support' }}
+        </h3>
+      </a>
+      
+      <!-- Category 6 -->
+      <a href="{{ section.settings.category_6_url | default: '/collections/therapy-balls' }}" class="group">
+        <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden mb-3 flex items-center justify-center relative">
+          {% if section.settings.category_6_image %}
+            <img 
+              src="{{ section.settings.category_6_image | img_url: '250x250', crop: 'center' }}" 
+              alt="{{ section.settings.category_6_title | escape }}" 
+              class="w-full h-full object-cover"
+            >
+          {% else %}
+            <div class="w-20 h-20 bg-green-500 rounded-full"></div>
+          {% endif %}
+          <div class="absolute bottom-0 right-0 w-8 h-8 bg-teal rounded-full m-2 flex items-center justify-center text-white opacity-90 group-hover:opacity-100 transition-opacity">
+            <i class="fa-solid fa-plus text-xs"></i>
+          </div>
+        </div>
+        <h3 class="text-center text-sm font-medium text-gray-800">
+          {{ section.settings.category_6_title | default: 'Therapy Balls' }}
+        </h3>
+      </a>
+    </div>
+    
+    {% if section.settings.show_view_all %}
+      <div class="text-center mt-8">
+        <a href="{{ section.settings.view_all_url | default: '/collections/all' }}" class="inline-block text-teal hover:text-teal-dark font-medium">
+          {{ section.settings.view_all_text | default: 'View All Wellness Products' }}
+          <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Wellness Products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Wellness Products"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Explore our complete range of therapeutic products"
+    },
+    {
+      "type": "header",
+      "content": "Category 1"
+    },
+    {
+      "type": "text",
+      "id": "category_1_title",
+      "label": "Title",
+      "default": "Massage Aids"
+    },
+    {
+      "type": "image_picker",
+      "id": "category_1_image",
+      "label": "Image"
+    },
+    {
+      "type": "url",
+      "id": "category_1_url",
+      "label": "URL",
+      "default": "/collections/massage"
+    },
+    {
+      "type": "header",
+      "content": "Category 2"
+    },
+    {
+      "type": "text",
+      "id": "category_2_title",
+      "label": "Title",
+      "default": "Ankle Supports"
+    },
+    {
+      "type": "image_picker",
+      "id": "category_2_image",
+      "label": "Image"
+    },
+    {
+      "type": "url",
+      "id": "category_2_url",
+      "label": "URL",
+      "default": "/collections/ankle-support"
+    },
+    {
+      "type": "header",
+      "content": "Category 3"
+    },
+    {
+      "type": "text",
+      "id": "category_3_title",
+      "label": "Title",
+      "default": "Foot Care"
+    },
+    {
+      "type": "image_picker",
+      "id": "category_3_image",
+      "label": "Image"
+    },
+    {
+      "type": "url",
+      "id": "category_3_url",
+      "label": "URL",
+      "default": "/collections/foot-care"
+    },
+    {
+      "type": "header",
+      "content": "Category 4"
+    },
+    {
+      "type": "text",
+      "id": "category_4_title",
+      "label": "Title",
+      "default": "Knee Braces"
+    },
+    {
+      "type": "image_picker",
+      "id": "category_4_image",
+      "label": "Image"
+    },
+    {
+      "type": "url",
+      "id": "category_4_url",
+      "label": "URL",
+      "default": "/collections/knee-braces"
+    },
+    {
+      "type": "header",
+      "content": "Category 5"
+    },
+    {
+      "type": "text",
+      "id": "category_5_title",
+      "label": "Title",
+      "default": "Wrist Support"
+    },
+    {
+      "type": "image_picker",
+      "id": "category_5_image",
+      "label": "Image"
+    },
+    {
+      "type": "url",
+      "id": "category_5_url",
+      "label": "URL",
+      "default": "/collections/wrist-support"
+    },
+    {
+      "type": "header",
+      "content": "Category 6"
+    },
+    {
+      "type": "text",
+      "id": "category_6_title",
+      "label": "Title",
+      "default": "Therapy Balls"
+    },
+    {
+      "type": "image_picker",
+      "id": "category_6_image",
+      "label": "Image"
+    },
+    {
+      "type": "url",
+      "id": "category_6_url",
+      "label": "URL",
+      "default": "/collections/therapy-balls"
+    },
+    {
+      "type": "header",
+      "content": "View All Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "label": "Show 'View All' link",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "view_all_text",
+      "label": "View all text",
+      "default": "View All Wellness Products"
+    },
+    {
+      "type": "url",
+      "id": "view_all_url",
+      "label": "View all URL",
+      "default": "/collections/all"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Wellness Products",
+      "category": "Products"
+    }
+  ]
+}
+{% endschema %}
