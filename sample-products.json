@@ -1,0 +1,150 @@
+{
+  "products": [
+    {
+      "id": "1001",
+      "title": "Advanced Knee Brace Support",
+      "handle": "advanced-knee-brace-support",
+      "description": "Professional-grade knee brace for maximum support and stability. Perfect for sports recovery, injury prevention, and daily therapeutic use. Adjustable straps ensure a perfect fit for all sizes.",
+      "vendor": "BioSupport Care",
+      "type": "Orthopedic Support",
+      "price": 59.99,
+      "compare_at_price": 75.99,
+      "available": true,
+      "featured_image": "knee-brace.png",
+      "tags": ["knee", "orthopedic", "support", "medical", "rehabilitation"],
+      "variants": [
+        {
+          "id": "10011",
+          "title": "Small",
+          "price": 59.99,
+          "available": true
+        },
+        {
+          "id": "10012",
+          "title": "Medium",
+          "price": 59.99,
+          "available": true
+        },
+        {
+          "id": "10013",
+          "title": "Large",
+          "price": 59.99,
+          "available": true
+        }
+      ],
+      "options": [
+        {
+          "name": "Size",
+          "values": ["Small", "Medium", "Large"]
+        }
+      ]
+    },
+    {
+      "id": "1002",
+      "title": "Stabilizing Ankle Support",
+      "handle": "stabilizing-ankle-support",
+      "description": "Comprehensive ankle support with advanced compression technology. Helps prevent injuries while providing therapeutic compression for existing conditions. Breathable material ensures comfort during extended wear.",
+      "vendor": "BioSupport Care",
+      "type": "Orthopedic Support",
+      "price": 42.99,
+      "compare_at_price": 54.99,
+      "available": true,
+      "featured_image": "ankle-support.png",
+      "tags": ["ankle", "orthopedic", "support", "medical", "compression"],
+      "variants": [
+        {
+          "id": "10021",
+          "title": "Small",
+          "price": 42.99,
+          "available": true
+        },
+        {
+          "id": "10022",
+          "title": "Medium",
+          "price": 42.99,
+          "available": true
+        },
+        {
+          "id": "10023",
+          "title": "Large",
+          "price": 42.99,
+          "available": true
+        }
+      ],
+      "options": [
+        {
+          "name": "Size",
+          "values": ["Small", "Medium", "Large"]
+        }
+      ]
+    },
+    {
+      "id": "1003",
+      "title": "Ergonomic Back Support Belt",
+      "handle": "ergonomic-back-support-belt",
+      "description": "Premium back support belt designed to provide lumbar support and relieve back pain. Adjustable compression straps help maintain proper posture during physical activities. Ideal for work, exercise, or everyday support.",
+      "vendor": "BioSupport Care",
+      "type": "Orthopedic Support",
+      "price": 65.99,
+      "compare_at_price": 79.99,
+      "available": true,
+      "featured_image": "back-support.png",
+      "tags": ["back", "lumbar", "orthopedic", "support", "medical", "posture"],
+      "variants": [
+        {
+          "id": "10031",
+          "title": "Small",
+          "price": 65.99,
+          "available": true
+        },
+        {
+          "id": "10032",
+          "title": "Medium",
+          "price": 65.99,
+          "available": true
+        },
+        {
+          "id": "10033",
+          "title": "Large",
+          "price": 65.99,
+          "available": true
+        },
+        {
+          "id": "10034",
+          "title": "X-Large",
+          "price": 69.99,
+          "available": true
+        }
+      ],
+      "options": [
+        {
+          "name": "Size",
+          "values": ["Small", "Medium", "Large", "X-Large"]
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "id": "101",
+      "title": "Orthopedic Supports",
+      "handle": "orthopedic-supports",
+      "description": "Professional-grade orthopedic supports for pain relief, injury recovery, and everyday comfort. Our ergonomic designs provide superior support while allowing natural movement.",
+      "products": ["1001", "1002", "1003"]
+    },
+    {
+      "id": "102",
+      "title": "Rehabilitation Products",
+      "handle": "rehabilitation-products",
+      "description": "Complete range of rehabilitation products designed to speed recovery and strengthen muscles after injury or surgery. Doctor-recommended solutions for home therapy.",
+      "products": ["1001", "1002"]
+    },
+    {
+      "id": "103",
+      "title": "Sports Recovery",
+      "handle": "sports-recovery",
+      "description": "Advanced support products for athletes and active individuals. Designed to prevent injuries during physical activity and support recovery after intense workouts.",
+      "products": ["1001", "1002", "1003"]
+    }
+  ]
+}

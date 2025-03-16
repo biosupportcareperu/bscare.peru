@@ -1,0 +1,200 @@
+[
+  {
+    "id": "p1",
+    "title": "Advanced Knee Brace",
+    "body_html": "<p>Our premium knee brace provides superior support for all types of knee injuries and chronic conditions. The ergonomic design ensures comfort while the advanced materials offer stability and therapeutic compression.</p><ul><li>Adjustable compression straps</li><li>Breathable neoprene material</li><li>Lightweight and comfortable for all-day wear</li><li>Available in multiple sizes</li></ul>",
+    "vendor": "BioSupport Care",
+    "product_type": "Braces & Supports",
+    "tags": ["knee", "brace", "support", "orthopedic"],
+    "variants": [
+      {
+        "title": "Small",
+        "price": "49.99",
+        "compare_at_price": "59.99",
+        "sku": "KB-ADV-S",
+        "position": 1,
+        "option1": "Small"
+      },
+      {
+        "title": "Medium",
+        "price": "49.99",
+        "compare_at_price": "59.99",
+        "sku": "KB-ADV-M",
+        "position": 2,
+        "option1": "Medium"
+      },
+      {
+        "title": "Large",
+        "price": "49.99",
+        "compare_at_price": "59.99",
+        "sku": "KB-ADV-L",
+        "position": 3,
+        "option1": "Large"
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["Small", "Medium", "Large"]
+      }
+    ]
+  },
+  {
+    "id": "p2",
+    "title": "Lightweight Aluminum Crutches",
+    "body_html": "<p>Our lightweight aluminum crutches are designed for maximum comfort and mobility. Adjustable height settings make them perfect for users of various heights while the padded underarm and hand grips ensure comfort during extended use.</p><ul><li>Lightweight aluminum construction</li><li>Adjustable height: 4'6\" to 6'2\"</li><li>Slip-resistant rubber tips</li><li>Padded underarm and hand grips</li></ul>",
+    "vendor": "BioSupport Care",
+    "product_type": "Mobility Aids",
+    "tags": ["crutches", "mobility", "rehabilitation"],
+    "variants": [
+      {
+        "title": "Standard",
+        "price": "39.99",
+        "compare_at_price": null,
+        "sku": "CR-ALU-STD",
+        "position": 1,
+        "option1": "Standard"
+      }
+    ],
+    "options": [
+      {
+        "name": "Type",
+        "position": 1,
+        "values": ["Standard"]
+      }
+    ]
+  },
+  {
+    "id": "p3",
+    "title": "Lumbar Support Cushion",
+    "body_html": "<p>Provide optimal support for your lower back with our ergonomic lumbar cushion. Designed to promote proper posture and reduce strain during long periods of sitting, this cushion is perfect for office chairs, car seats, or home use.</p><ul><li>Memory foam construction</li><li>Breathable mesh cover</li><li>Adjustable strap to secure to chairs</li><li>Ergonomic design for proper spine alignment</li></ul>",
+    "vendor": "BioSupport Care",
+    "product_type": "Back Supports",
+    "tags": ["back", "lumbar", "cushion", "posture"],
+    "variants": [
+      {
+        "title": "Default",
+        "price": "29.99",
+        "compare_at_price": "34.99",
+        "sku": "LS-MEM-01",
+        "position": 1,
+        "option1": "Default"
+      }
+    ],
+    "options": [
+      {
+        "name": "Title",
+        "position": 1,
+        "values": ["Default"]
+      }
+    ]
+  },
+  {
+    "id": "p4",
+    "title": "Ankle Support Brace",
+    "body_html": "<p>Our ankle support brace provides firm compression and stability for weak or injured ankles. The open heel design allows for a comfortable fit in most shoes while still providing the support you need for daily activities or sports.</p><ul><li>Adjustable compression straps</li><li>Breathable neoprene material</li><li>Open heel design</li><li>Fits left or right ankle</li></ul>",
+    "vendor": "BioSupport Care",
+    "product_type": "Braces & Supports",
+    "tags": ["ankle", "brace", "support", "orthopedic"],
+    "variants": [
+      {
+        "title": "Small",
+        "price": "19.99",
+        "compare_at_price": null,
+        "sku": "AB-NEO-S",
+        "position": 1,
+        "option1": "Small"
+      },
+      {
+        "title": "Medium",
+        "price": "19.99",
+        "compare_at_price": null,
+        "sku": "AB-NEO-M",
+        "position": 2,
+        "option1": "Medium"
+      },
+      {
+        "title": "Large",
+        "price": "19.99",
+        "compare_at_price": null,
+        "sku": "AB-NEO-L",
+        "position": 3,
+        "option1": "Large"
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["Small", "Medium", "Large"]
+      }
+    ]
+  },
+  {
+    "id": "p5",
+    "title": "Folding Walker with Wheels",
+    "body_html": "<p>Our folding walker combines stability and mobility with its two front wheels and sturdy aluminum frame. Easily fold it for storage or travel, making it the perfect companion for those who need walking assistance both at home and on the go.</p><ul><li>Lightweight aluminum construction</li><li>5-inch front wheels for smooth rolling</li><li>Folds flat for easy storage and transport</li><li>Adjustable height settings</li><li>Weight capacity: 300 lbs</li></ul>",
+    "vendor": "BioSupport Care",
+    "product_type": "Mobility Aids",
+    "tags": ["walker", "mobility", "wheels", "rehabilitation"],
+    "variants": [
+      {
+        "title": "Standard",
+        "price": "79.99",
+        "compare_at_price": "89.99",
+        "sku": "WK-FOLD-W",
+        "position": 1,
+        "option1": "Standard"
+      }
+    ],
+    "options": [
+      {
+        "name": "Type",
+        "position": 1,
+        "values": ["Standard"]
+      }
+    ]
+  },
+  {
+    "id": "p6",
+    "title": "Therapeutic Gel Ice Pack",
+    "body_html": "<p>Our flexible gel ice pack stays cold longer than traditional ice packs while remaining pliable even when frozen. Perfect for injuries, post-workout recovery, or chronic pain relief, the soft fabric cover protects your skin while delivering therapeutic cold therapy.</p><ul><li>Flexible even when frozen</li><li>Soft fabric cover included</li><li>Reusable and leak-proof design</li><li>Large size covers most body areas</li></ul>",
+    "vendor": "BioSupport Care",
+    "product_type": "Hot & Cold Therapy",
+    "tags": ["ice pack", "cold therapy", "pain relief", "rehabilitation"],
+    "variants": [
+      {
+        "title": "Small",
+        "price": "12.99",
+        "compare_at_price": null,
+        "sku": "IP-GEL-S",
+        "position": 1,
+        "option1": "Small"
+      },
+      {
+        "title": "Medium",
+        "price": "15.99",
+        "compare_at_price": null,
+        "sku": "IP-GEL-M",
+        "position": 2,
+        "option1": "Medium"
+      },
+      {
+        "title": "Large",
+        "price": "18.99",
+        "compare_at_price": null,
+        "sku": "IP-GEL-L",
+        "position": 3,
+        "option1": "Large"
+      }
+    ],
+    "options": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": ["Small", "Medium", "Large"]
+      }
+    ]
+  }
+]

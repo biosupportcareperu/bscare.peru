@@ -1,0 +1,415 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "BioSupport Care",
+    "theme_version": "1.0.0",
+    "theme_author": "Replit",
+    "theme_documentation_url": "https://help.shopify.com",
+    "theme_support_url": "https://support.shopify.com"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Primary Colors"
+      },
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primary Color",
+        "default": "#0ab2a8"
+      },
+      {
+        "type": "color",
+        "id": "color_primary_dark",
+        "label": "Primary Dark",
+        "default": "#089089"
+      },
+      {
+        "type": "color",
+        "id": "color_primary_light",
+        "label": "Primary Light",
+        "default": "#e8f7f6"
+      },
+      {
+        "type": "header",
+        "content": "Secondary Colors"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary",
+        "label": "Secondary Color",
+        "default": "#2a7de1"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary_light",
+        "label": "Secondary Light",
+        "default": "#d7efff"
+      },
+      {
+        "type": "header",
+        "content": "Text Colors"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text Color",
+        "default": "#333333"
+      },
+      {
+        "type": "color",
+        "id": "color_text_light",
+        "label": "Text Light",
+        "default": "#666666"
+      },
+      {
+        "type": "color",
+        "id": "color_text_dark",
+        "label": "Text Dark",
+        "default": "#111111"
+      },
+      {
+        "type": "header",
+        "content": "Background Colors"
+      },
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_background_light",
+        "label": "Background Light",
+        "default": "#f5f5f5"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Headings"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_heading",
+        "label": "Heading Font",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "range",
+        "id": "font_size_heading_base",
+        "label": "Base Size",
+        "min": 12,
+        "max": 36,
+        "step": 1,
+        "default": 24,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "Body Text"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "label": "Body Font",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "range",
+        "id": "font_size_body_base",
+        "label": "Base Size",
+        "min": 12,
+        "max": 20,
+        "step": 1,
+        "default": 16,
+        "unit": "px"
+      }
+    ]
+  },
+  {
+    "name": "Buttons & Links",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Buttons"
+      },
+      {
+        "type": "select",
+        "id": "button_style",
+        "label": "Button Style",
+        "options": [
+          {
+            "value": "rounded",
+            "label": "Rounded"
+          },
+          {
+            "value": "pill",
+            "label": "Pill"
+          },
+          {
+            "value": "square",
+            "label": "Square"
+          }
+        ],
+        "default": "rounded"
+      },
+      {
+        "type": "checkbox",
+        "id": "button_uppercase",
+        "label": "Uppercase Text",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Links"
+      },
+      {
+        "type": "checkbox",
+        "id": "underline_links",
+        "label": "Underline Links",
+        "default": false
+      }
+    ]
+  },
+  {
+    "name": "Social Media",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Social Accounts"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook",
+        "label": "Facebook",
+        "info": "https://facebook.com/yourpage"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram",
+        "label": "Instagram",
+        "info": "https://instagram.com/yourhandle"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter",
+        "label": "Twitter",
+        "info": "https://twitter.com/yourhandle"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube",
+        "label": "YouTube",
+        "info": "https://youtube.com/channel/yourchannelid"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest",
+        "label": "Pinterest",
+        "info": "https://pinterest.com/yourboard"
+      }
+    ]
+  },
+  {
+    "name": "Waitlist Settings",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Waitlist Form"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_waitlist",
+        "label": "Show Waitlist Form",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "waitlist_title",
+        "label": "Title",
+        "default": "Join Our Waitlist"
+      },
+      {
+        "type": "textarea",
+        "id": "waitlist_subtitle",
+        "label": "Subtitle",
+        "default": "Be the first to know when we launch new orthopedic products"
+      },
+      {
+        "type": "textarea",
+        "id": "waitlist_interest_options",
+        "label": "Interest Options",
+        "default": "Knee braces\nCrutches\nWalkers\nBack supports\nAll products",
+        "info": "Add each option on a new line"
+      }
+    ]
+  },
+  {
+    "name": "Product Grid",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Product Card"
+      },
+      {
+        "type": "select",
+        "id": "product_card_style",
+        "label": "Card Style",
+        "options": [
+          {
+            "value": "standard",
+            "label": "Standard"
+          },
+          {
+            "value": "minimal",
+            "label": "Minimal"
+          },
+          {
+            "value": "detailed",
+            "label": "Detailed"
+          }
+        ],
+        "default": "standard"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_vendor",
+        "label": "Show Vendor",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_quick_add",
+        "label": "Show Quick Add Button",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "products_per_row",
+        "label": "Products Per Row (Desktop)",
+        "min": 2,
+        "max": 6,
+        "step": 1,
+        "default": 4
+      },
+      {
+        "type": "range",
+        "id": "products_per_row_mobile",
+        "label": "Products Per Row (Mobile)",
+        "min": 1,
+        "max": 3,
+        "step": 1,
+        "default": 2
+      }
+    ]
+  },
+  {
+    "name": "Cart",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Cart Settings"
+      },
+      {
+        "type": "select",
+        "id": "cart_type",
+        "label": "Cart Type",
+        "options": [
+          {
+            "value": "drawer",
+            "label": "Slide-out Drawer"
+          },
+          {
+            "value": "page",
+            "label": "Cart Page"
+          }
+        ],
+        "default": "drawer"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_ajax_cart",
+        "label": "Enable AJAX cart",
+        "default": true,
+        "info": "Updates the cart without refreshing the page"
+      },
+      {
+        "type": "header",
+        "content": "Promotions"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_free_shipping_threshold",
+        "label": "Show free shipping threshold",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "free_shipping_threshold",
+        "label": "Free shipping threshold amount",
+        "default": "75.00"
+      }
+    ]
+  },
+  {
+    "name": "Customer Account",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Account Settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_customer_accounts",
+        "label": "Enable customer accounts",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_order_history",
+        "label": "Show order history",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_wishlist",
+        "label": "Show wishlist",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Checkout",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Checkout Settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_checkout_shipping_calculator",
+        "label": "Show shipping calculator",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "require_terms_acceptance",
+        "label": "Require terms acceptance",
+        "default": false
+      },
+      {
+        "type": "textarea",
+        "id": "terms_content",
+        "label": "Terms content",
+        "default": "By checking this box, you agree to our Terms of Service and Privacy Policy."
+      }
+    ]
+  }
+]
